@@ -6,7 +6,7 @@ __Example:__
 
 __Usage:__
 First, start the server the program will use by running Server.java
-Next, for each client trying to use run Client.java
+Next, run Client.java for each client to connect to the server
 
 ![](Images/Client.png)
 Then, enter your username, click on "Connect" and start chatting!
