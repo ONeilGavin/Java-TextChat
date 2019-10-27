@@ -1,6 +1,10 @@
-/* package whatever; // don't place package name! */
+/**
+ * @(#)ControlPanel.java
+ *
+ * @author Gavin O'Neil
+ * @version 1.00 2019/6/16
+ */
 
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -10,12 +14,10 @@ public class ControlPanel extends JPanel implements ActionListener
 	private JTextField textField  = new JTextField("Enter user name", 20);
 	private JTextField chatField = new JTextField(20);
     private JTextArea textArea = new JTextArea(24,700);
-    private final static String newline = "\n";
     
     private JButton connectButton = new JButton("Connect");
     private JButton sendButton = new JButton("Send");
     private Client client;
-    private boolean firstMessage = true;
 
     
 	public ControlPanel() {
