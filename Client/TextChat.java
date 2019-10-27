@@ -1,9 +1,8 @@
 /**
- * @(#)VoiceChat.java
+ * @(#)TextChat.java
  *
- *
- * @author 
- * @version 1.00 2019/5/30
+ * @Gavin O'Neil
+ * @version 1.00 2019/6/16
  */
 
 import java.awt.Container;
