@@ -1,0 +1,70 @@
+/* package whatever; // don't place package name! */
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+public class ControlPanel extends JPanel implements ActionListener
+{
+	private JTextField textField  = new JTextField("Enter user name", 20);
+	private JTextField chatField = new JTextField(20);
+    private JTextArea textArea = new JTextArea(24,700);
+    private final static String newline = "\n";
+    
+    private JButton connectButton = new JButton("Connect");
+    private JButton sendButton = new JButton("Send");
+    private Client client;
+    private boolean firstMessage = true;
+
+    
+	public ControlPanel() {
+	
+        setLayout(null);
+        add(connectButton);
+        connectButton.setSize(connectButton.getPreferredSize());
+        connectButton.setLocation(430,6);
+        connectButton.addActionListener(this);
+
+        add(textField);
+        textField.setSize(textField.getPreferredSize());
+        textField.setLocation(200, 8);
+        textField.addActionListener(this);
+        
+        add(textArea);
+        textArea.setSize(textArea.getPreferredSize());
+        textArea.setLocation(0,40);
+        textArea.setEditable(false);
+        
+        add(chatField);
+        chatField.setSize(chatField.getPreferredSize());
+        chatField.setLocation(200, 440);
+        chatField.addActionListener(this);
+        
+        add(sendButton);
+        sendButton.setSize(sendButton.getPreferredSize());
+        sendButton.setLocation(430, 435);
+        sendButton.addActionListener(this);
+ 
+	}
+	public void actionPerformed(ActionEvent e) {
+		JButton button = (JButton)e.getSource();
+		if(button == connectButton) {
+			String text = textField.getText(); //Start thread for client
+			client = new Client(text, this);
+			Thread thread = new Thread(client);
+			thread.start();
+		}
+		
+		
+		if(button == sendButton) {
+			String text = chatField.getText();
+			client.sendMessage(text);
+		}
+
+	}
+	
+	public void appendToTextArea(String m) {
+		textArea.append(m);
+	}
+}
