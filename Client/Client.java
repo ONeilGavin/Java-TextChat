@@ -1,3 +1,10 @@
+/**
+ * @(#)ControlPanel.java
+ *
+ * @author Gavin O'Neil
+ * @version 1.00 2019/6/16
+ */
+
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
