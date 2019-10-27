@@ -1,7 +1,7 @@
 /**
  * @(#)TextChat.java
  *
- * @Gavin O'Neil
+ * @atuhor Gavin O'Neil
  * @version 1.00 2019/6/16
  */
 
